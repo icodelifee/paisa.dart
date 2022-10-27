@@ -1,4 +1,4 @@
-import 'package:paisa_dart/src/extensions/first_where_or_null.dart';
+import 'package:paisa/src/extensions/first_where_or_null.dart';
 
 import '../entities/enums/country_code.dart';
 

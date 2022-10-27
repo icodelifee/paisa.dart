@@ -1,9 +1,9 @@
 import 'package:http/http.dart' as http;
-import 'package:paisa_dart/src/entities/enums/country_code.dart';
-import 'package:paisa_dart/src/entities/enums/currency.dart';
-import 'package:paisa_dart/src/entities/models/api_response.dart';
-import 'package:paisa_dart/src/extensions/first_where_or_null.dart';
-import 'package:paisa_dart/src/extensions/search_country_code.dart';
+import 'package:paisa/src/entities/enums/country_code.dart';
+import 'package:paisa/src/entities/enums/currency.dart';
+import 'package:paisa/src/entities/models/api_response.dart';
+import 'package:paisa/src/extensions/first_where_or_null.dart';
+import 'package:paisa/src/extensions/search_country_code.dart';
 
 class CurrencyConvertor {
   static final CurrencyConvertor _instance = CurrencyConvertor._internal();
