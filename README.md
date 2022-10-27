@@ -32,4 +32,4 @@ void main(List<String> args) {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/icodelifee/paise.dart/issues
+[tracker]: https://github.com/icodelifee/paisa.dart/issues
