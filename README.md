@@ -15,9 +15,17 @@ dependencies:
 
 ## Usage
 
-
 ```dart
-const like = 'sample';
+void main(List<String> args) {
+  // Converts USD to INR
+  print(CurrencyConvertor.convert(from: Currency.USD, to: Currency.INR, amount: 100));
+  print(CurrencyConvertor.convertFromString(from: 'USD', to: 'INR', amount: 100));
+
+  // Get exchange rate of USD to INR  
+  print(CurrencyConvertor.rate(Currency.USD, Currency.INR));
+  print(CurrencyConvertor.rateFromString('USD', 'INR'));
+  print(CurrencyConvertor.rateFromCountryCode(from: 'US', to: 'IN'));
+}
 ```
 
 ## Features and bugs
