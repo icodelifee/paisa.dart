@@ -1,6 +1,7 @@
 name: paisa
 description: A new Flutter package project.
 version: 0.0.1
+repository: 'https://github.com/icodelifee/paisa.dart'
 
 environment:
   sdk: '>=2.18.2 <3.0.0'

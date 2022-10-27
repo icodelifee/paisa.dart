@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import '../../../paisa_dart.dart';
+import '../../../paisa.dart';
 
 enum CountryCode {
   AD(Currency.EUR),
