@@ -1,5 +1,5 @@
 name: paisa
-description: A new Flutter package project.
+description: A simple currency conversion library
 version: 0.0.1
 repository: 'https://github.com/icodelifee/paisa.dart'
 
