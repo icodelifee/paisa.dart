@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Fixed API documentation syntax highlighting issues
+
 ## 0.0.4
 
 * Updated docs.
