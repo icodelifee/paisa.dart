@@ -41,7 +41,7 @@ void main(List<String> args) {
 
 This library uses [exchangerate-api](https://www.exchangerate-api.com/) for getting the conversion rates and can be considered a unoffical wrapper for [exchangerate-api](https://www.exchangerate-api.com/)'s Open API.
 
-The library handles the conversion of Currency Code to [ISO 4217 Three Letter Currency Code](https://en.wikipedia.org/wiki/ISO_4217), unless you chose to use ```convertFromString()``` or ```rateFromString()```
+The library handles the conversion of Currency Code to [ISO 4217 Three Letter Currency Code](https://en.wikipedia.org/wiki/ISO_4217), unless you choose to use ```convertFromString()``` or ```rateFromString()```
 
 According to [exchangerate-api](https://www.exchangerate-api.com/docs/free) the conversion rates are refreshed every 24 hours.
 
