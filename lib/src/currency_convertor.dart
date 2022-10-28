@@ -14,7 +14,7 @@ class CurrencyConvertor {
 
   /// Converts the given [amount] from one currency to another.
   ///
-  ///  * [from] is the currency enum to convert from.
+  /// * [from] is the currency enum to convert from.
   /// * [to] is the currency enum to convert to.
   /// * [amount] is the amount to convert.
   ///
