@@ -19,7 +19,7 @@ In your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  paisa: ^0.0.3
+  paisa: ^0.0.4
 ```
 
 ## Usage
