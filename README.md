@@ -19,21 +19,37 @@ In your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  paisa: ^0.0.4
+  paisa: ^0.0.6
 ```
 
 ## Usage
 
 ```dart
-void main(List<String> args) {
+void main(List<String> args) async {
   // Converts USD to INR
-  print(CurrencyConvertor.convert(from: Currency.USD, to: Currency.INR, amount: 100));
-  print(CurrencyConvertor.convertFromString(from: 'USD', to: 'INR', amount: 100));
+  final convertedPaisa = await CurrencyConvertor.convert(
+    from: Currency.USD,
+    to: Currency.INR,
+    amount: 100,
+  );
 
-  // Get exchange rate for USD to INR  
-  print(CurrencyConvertor.rate(Currency.USD, Currency.INR));
-  print(CurrencyConvertor.rateFromString('USD', 'INR'));
-  print(CurrencyConvertor.rateFromCountryCode(from: 'US', to: 'IN'));
+  final convertedStringPaisa = await CurrencyConvertor.convertFromString(
+    from: 'USD',
+    to: 'INR',
+    amount: 100,
+  );
+
+  print(convertedPaisa.convertedAmount); // 8224.3079
+  print(convertedStringPaisa.convertedAmount); // 8224.3079
+
+  // Get exchange rate for USD to INR
+  final rate = await CurrencyConvertor.rate(Currency.USD, Currency.INR);
+  final rateFromString = await CurrencyConvertor.rateFromString('USD', 'INR');
+  final rateFromCountryCode = await CurrencyConvertor.rateFromCountryCode(from: 'US', to: 'IN');
+
+  print('Rate for USD -> INR: ${rate.rate}'); // Rate for USD -> INR: 82.243079
+  print('Rate for USD -> INR [From String]: ${rateFromString.rate}'); // Rate for USD -> INR [From String]: 82.243079
+  print('Rate for US -> IN Currency: ${rateFromCountryCode.rate}'); // Rate for US -> IN Currency: 82.243079
 }
 ```
 

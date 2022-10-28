@@ -1,3 +1,9 @@
+## 0.0.6
+
+* Implemented Paisa model
+* Convert functions now return Paisa model instead of double
+* Added currency symbol to Currency enum
+ 
 ## 0.0.5
 
 * Fixed API documentation syntax highlighting issues
