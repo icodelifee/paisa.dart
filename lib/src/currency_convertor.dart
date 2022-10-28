@@ -22,9 +22,7 @@ class CurrencyConvertor {
   /// Returns the converted amount.
   ///
   /// Throws [ArgumentError] if [amount] is null or less than 0.<br>
-  /// Throws [ArgumentError] if [from] and [to] are the same.
   static Future<double> convert({required Currency from, required Currency to, required double amount}) async {
-    if (from == to) throw ArgumentError('from and to currencies cannot be the same');
     if (amount <= 0) throw ArgumentError('amount cannot be less than 0');
 
     return _getCurrencyConversion(from.name, to.name, amount);
@@ -34,7 +32,6 @@ class CurrencyConvertor {
   /// [convertFromString] accepts [String] currency codes eg: USD, INR, EUR etc <br>
   /// eg: ```convertFromString('USD', 'INR', 100)``` will convert 100 USD to INR
   static Future<double> convertFromString({required String from, required String to, required double amount}) async {
-    if (from == to) throw ArgumentError('from and to currencies cannot be the same');
     if (amount <= 0) throw ArgumentError('amount cannot be less than 0');
 
     return _getCurrencyConversion(from, to, amount);
