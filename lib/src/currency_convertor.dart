@@ -14,15 +14,19 @@ class CurrencyConvertor {
 
   /// Converts the given [amount] from one currency to another.
   ///
-  /// * [from] is the currency enum to convert from.
-  /// * [to] is the currency enum to convert to.
+  /// * [from] is the [Currency] to convert from.
+  /// * [to] is the [Currency] enum to convert to.
   /// * [amount] is the amount to convert.
   ///
   /// [Currency] enum is used to specify the currency.<br>
   /// Returns the converted amount.
   ///
   /// Throws [ArgumentError] if [amount] is null or less than 0.<br>
-  static Future<double> convert({required Currency from, required Currency to, required double amount}) async {
+  static Future<double> convert({
+    required Currency from,
+    required Currency to,
+    required double amount,
+  }) async {
     if (amount <= 0) throw ArgumentError('amount cannot be less than 0');
 
     return _getCurrencyConversion(from.name, to.name, amount);
@@ -31,7 +35,11 @@ class CurrencyConvertor {
   /// Converts the [amount] from the [from] currency to the [to] currency. <br>
   /// [convertFromString] accepts [String] currency codes eg: USD, INR, EUR etc <br>
   /// eg: ```convertFromString('USD', 'INR', 100)``` will convert 100 USD to INR
-  static Future<double> convertFromString({required String from, required String to, required double amount}) async {
+  static Future<double> convertFromString({
+    required String from,
+    required String to,
+    required double amount,
+  }) async {
     if (amount <= 0) throw ArgumentError('amount cannot be less than 0');
 
     return _getCurrencyConversion(from, to, amount);
@@ -51,7 +59,8 @@ class CurrencyConvertor {
 
   /// Returns the currency conversion rate for the given [from] and [to] country codes.
   /// <br>eg.  ```CurrencyConvertor.rateFromCountryCode(from:'US', to:'IN');```
-  static Future<double> rateFromCountryCode({required String from, required String to}) async {
+  static Future<double> rateFromCountryCode(
+      {required String from, required String to}) async {
     final ccFrom = CountryCode.values.fromCode(from);
     final ccTo = CountryCode.values.fromCode(to);
     if (ccFrom == null || ccTo == null) {
@@ -61,7 +70,8 @@ class CurrencyConvertor {
     return convert(from: ccFrom.currency, to: ccTo.currency, amount: 1);
   }
 
-  static Future<double> _getCurrencyConversion(String from, String to, double amount) async {
+  static Future<double> _getCurrencyConversion(
+      String from, String to, double amount) async {
     final uri = Uri.parse('https://open.er-api.com/v6/latest/$from');
 
     try {
@@ -69,7 +79,9 @@ class CurrencyConvertor {
       if (response.statusCode == 200) {
         final api = APIResponse.fromJson(response.body);
 
-        final rate = api.rates?.entries.firstWhereOrNull((c) => c.key.toLowerCase() == to.toLowerCase())?.value;
+        final rate = api.rates?.entries
+            .firstWhereOrNull((c) => c.key.toLowerCase() == to.toLowerCase())
+            ?.value;
         if (rate == null) {
           throw Exception('Currency not found');
         }
