@@ -1,5 +1,5 @@
 name: paisa
-description: A simple currency conversion library both dart and flutter
+description: A Flutter and Dart plugin for converting currencies and getting the latest exchange rates. Supports 161 currencies.
 version: 0.0.3
 repository: 'https://github.com/icodelifee/paisa.dart'
 issue_tracker: https://github.com/icodelifee/paisa.dart/issues
