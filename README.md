@@ -37,8 +37,24 @@ void main(List<String> args) {
 }
 ```
 
+## Note
+
+This library uses [exchangerate-api](https://www.exchangerate-api.com/) for getting the conversion rates and can be considered a unoffical wrapper for [exchangerate-api](https://www.exchangerate-api.com/)'s Open API.
+
+The library handles the conversion of Currency Code to [ISO 4217 Three Letter Currency Code](https://en.wikipedia.org/wiki/ISO_4217), unless you chose to use ```convertFromString()``` or ```rateFromString()```
+
+According to [exchangerate-api](https://www.exchangerate-api.com/docs/free) the conversion rates are refreshed every 24 hours.
+
+
+If you would like to know about rate limiting and  all of the supported and unsupported currencies, Please checkout [Supported Currencies Documentation](https://www.exchangerate-api.com/docs/supported-currencies)
+
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/icodelifee/paisa.dart/issues
+
+Contributions to this repository are welcome.
+
+## License
+MIT
