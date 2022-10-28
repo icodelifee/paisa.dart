@@ -2,22 +2,29 @@
 
 import 'package:paisa/paisa.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   // Converts USD to INR
-  print(CurrencyConvertor.convert(
+  final convertedPaisa = await CurrencyConvertor.convert(
     from: Currency.USD,
     to: Currency.INR,
     amount: 100,
-  ));
+  );
 
-  print(CurrencyConvertor.convertFromString(
+  final convertedStringPaisa = await CurrencyConvertor.convertFromString(
     from: 'USD',
     to: 'INR',
     amount: 100,
-  ));
+  );
+
+  print(convertedPaisa.convertedAmount);
+  print(convertedStringPaisa.convertedAmount);
 
   // Get exchange rate for USD to INR
-  print(CurrencyConvertor.rate(Currency.USD, Currency.INR));
-  print(CurrencyConvertor.rateFromString('USD', 'INR'));
-  print(CurrencyConvertor.rateFromCountryCode(from: 'US', to: 'IN'));
+  final rate = await CurrencyConvertor.rate(Currency.USD, Currency.INR);
+  final rateFromString = await CurrencyConvertor.rateFromString('USD', 'INR');
+  final rateFromCountryCode = await CurrencyConvertor.rateFromCountryCode(from: 'US', to: 'IN');
+
+  print('Rate for USD -> INR: ${rate.rate}');
+  print('Rate for USD -> INR [From String]: ${rateFromString.rate}');
+  print('Rate for US -> IN Currency: ${rateFromCountryCode.rate}');
 }

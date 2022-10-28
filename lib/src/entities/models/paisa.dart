@@ -13,6 +13,7 @@ class Paisa {
   final double amount;
   final double rate;
 
+  /// Returns converted amount from the given [amount] and [rate]
   double get convertedAmount => amount * rate;
 
   String get toCurrencySymbol => to.currencySymbol;
