@@ -57,4 +57,4 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 Contributions to this repository are welcome.
 
 ## License
-MIT
+[MIT](https://choosealicense.com/licenses/mit/)
